@@ -34,8 +34,8 @@ int r_max_speedt =250;
 
 */
 //new value palulu
- int l_max_speedf = 90; 
-int r_max_speedf =90; 
+ int l_max_speedf = 100; 
+int r_max_speedf =100; 
 int l_max_speedr = 30;
 int r_max_speedr =31; 
 int l_max_speedJ = 30;
