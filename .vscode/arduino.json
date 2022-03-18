@@ -2,5 +2,6 @@
     "configuration": "cpu=atmega2560",
     "board": "arduino:avr:mega",
     "programmer": "arduino:avrispmkii",
-    "sketch": "firmware\\firmware_V0.ino"
+    "sketch": "Archives\\Firmware checker_\\kp_01-2_track_working_arm_tuned_park_picking_12_00_b_final_c.ino",
+    "port": "COM7"
 }

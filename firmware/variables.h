@@ -1,14 +1,20 @@
-#ifndef variables_h
-#define variables_h
+//ROBOKEN 2021 variables
+
 #include <SharpIR.h>
 #include <VarSpeedServo.h>
 VarSpeedServo servo1; // grip servo
 VarSpeedServo servo2; // shoulder servo
 VarSpeedServo servo3; // elbow servo
-VarSpeedServo servo4; // base servo  
+VarSpeedServo servo4; // base servo                                  
 #define IRPin A15                                          
 #define model 1080   
 SharpIR mySensor = SharpIR(IRPin,model); 
+/* Model :
+  GP2Y0A02YK0F --> 20150
+  GP2Y0A21YK0F --> 1080
+  GP2Y0A710K0F --> 100500
+  GP2YA41SK0F --> 430
+*/    
 const int PWM_Right = 2; // pwm pin   [brown with blue tie]
 const int rightIN1 = 26; // digital pin [black]
 const int rightIN2 = 28; // digital pin [white]
@@ -58,7 +64,7 @@ void turn_left();
 int distance1(); // function to calculate distance of an object using infra red sensor
 int Counter();
 void Delay(int seconds); //Function to create delay in the program
-void SendData_2pi();
+void SendData_2pi(int i,int j, int k);
 int GetData_from_pi();
 void Search_container();
 void Trackobject();
@@ -69,7 +75,4 @@ void armcontroL_FromPi();
 typedef enum {START,STOP,ARM_PARK,TASK1,TASK2,TASK3,TASK4,TASK5,TASK6,TASK7,TASK8,TASK9,TASK10,TASK11,TASK12,TASK13,TASK14,TASK15,TASK16,TASK17,TASK18,TASK19,TASK20,
 TASK21,TASK22,TASK23,TASK24,TASK25,TASK26,TASK27,TASK28,TASK29,TASK30,TASK31,TASK32,SEND_DATA,RECEIVE_DATA,STAND_BY,TESTCODE,WAIT,FORWARD,REVERSE} T_state_machine;  //Declare all the task of the Robot
 
-T_state_machine  state = START;
 
-
-#endif
