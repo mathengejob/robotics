@@ -157,10 +157,7 @@ void loop()
         state = TESTCODE;
      break;
 /*........................................................................................................................................*/
-     case TASK1:// move from start to point A then stop
-     U6 = digitalRead(sensor6);
-     while (U6 = HIGH )
-     {
+     case TASK1:// move from start to first junction
      lineTrack_PID(60, 60); 
      U6 = digitalRead(sensor6);  
      if(U6 == LOW )
@@ -168,22 +165,20 @@ void loop()
      Stop();
      Delay(1000);
      lineTrack_PID(60,60);
+     delay(1000);
      state = TASK2;
-     } 
-     U6 = digitalRead(sensor6);   
-     }     
-         
+     }       
      break;
 /*.......................................................................................................................................*/    
      case TASK2:
      U1= digitalRead(sensor1); U2= digitalRead(sensor2); U3= digitalRead(sensor3); U4= digitalRead(sensor4); U5= digitalRead(sensor5);
      lineTrack_PID(60, 60); 
-    if (U1==LOW&&U2==LOW&&U3==LOW&&4&&U5==LOW)
-    {
+     if (U1==LOW&&U2==LOW&&U3==LOW&&U4==LOW&&U5==LOW)
+     {
      Stop();
      Delay(2000);
      state = TASK3; 
-    }       
+     }       
      break;
 /*.......................................................................................................................................*/
      case TASK3:
