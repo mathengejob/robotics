@@ -34,8 +34,8 @@ int r_max_speedt =250;
 
 */
 //new value palulu
- int l_max_speedf = 155; 
-int r_max_speedf =155; 
+ int l_max_speedf = 90; 
+int r_max_speedf =90; 
 int l_max_speedr = 30;
 int r_max_speedr =31; 
 int l_max_speedJ = 30;
@@ -119,7 +119,8 @@ delay(1000);
 
 void loop() 
 {
- // read_sensor();
+  read_sensor();
+}
 //distance1();
 //tracking2();
 //read_sensor();
@@ -129,7 +130,7 @@ void loop()
 //pick_yellow();
 
 //
-while(ex1==false&&ex2==false&&ex3==false&&ex4==false&&ex5==false)//   [/]
+/*while(ex1==false&&ex2==false&&ex3==false&&ex4==false&&ex5==false)//   [/]
 {
 int sensor1=digitalRead(34);//sensor1
 int sensor2=digitalRead(36);//sensor2
@@ -275,16 +276,16 @@ digitalWrite(rmotorb,LOW);
 else if((sensor3==0))//white line at the centre . >>forward
 { 
   stop_r();
-  /*
-              ex1=false;
-              ex2=true;
-              ex3=true;
-              ex4=false;
-              ex5=false;
-              ex6=true;
-              ex7=false;
-              ex8=true;
-  */     
+  //
+    //          ex1=false;
+      //        ex2=true;
+        //      ex3=true;
+          //    ex4=false;
+            //  ex5=false;
+              //ex6=true;
+              //ex7=false;
+              //ex8=true;
+    
 }     
 
 while (ex1==false&&ex2==true&&ex3==true&&ex4==false&&ex5==false&&ex6==true&&ex7==false&&ex8==true)// [/] find white line to face yellow
@@ -630,9 +631,9 @@ else{
  while (ex1==true&&ex2==true&&ex3==false&&ex4==false&&ex5==true&&ex6==true&&ex7==true&&ex8==true)// heading for first white line//[/]
 {
 stop_r();
-}//*/
+}//
 
-}
+}*/
 
 void forward ()
 {
@@ -680,7 +681,7 @@ Serial.println(dist1);
 }
 void read_sensor()
 {
-  int sensor1=digitalRead(43);//sensor1
+  int sensor1=digitalRead(34);//sensor1
   Serial.print("sensor 1");
       Serial.print("= ");
 Serial.print(sensor1);
@@ -688,13 +689,13 @@ Serial.print(sensor1);
 
 
 Serial.print("\t");
-int sensor2=digitalRead(42);//sensor3
+int sensor2=digitalRead(36);//sensor3
 Serial.print("sensor 2");
       Serial.print("= ");
 Serial.print(sensor2);
 
 Serial.print("\t");
-int sensor3=digitalRead(37);//sensor2
+int sensor3=digitalRead(38);//sensor2
 Serial.print("sensor 3");
       Serial.print("= ");
 Serial.print(sensor3);
@@ -703,7 +704,7 @@ Serial.print("\t");
 Serial.print("");
 
 
-int sensor4=digitalRead(41);//sensor5
+int sensor4=digitalRead(40);//sensor5
 Serial.print("sensor 4");
       Serial.print("= ");
 Serial.print(sensor4);
@@ -712,7 +713,7 @@ Serial.print("\t");
 Serial.print("");
 //delay(1000);
 
-int sensor5=digitalRead(39);//sensor5
+int sensor5=digitalRead(42);//sensor5
 Serial.print("sensor 5");
       Serial.print("= ");
 Serial.print(sensor5);
