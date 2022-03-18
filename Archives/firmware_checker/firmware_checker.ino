@@ -8,12 +8,12 @@
 #define r_pwm  12//Motor B2*/
 // New pins
 //Adafruit_VL53L0X lox = Adafruit_VL53L0X();
-#define lmotorf 30 //Motor A1
-#define lmotorb 32 //Motor A2
-#define rmotorf 26 //Motor B1
-#define rmotorb 28 //Motor B2 ` 
-#define l_pwm 3//Motor B1
-#define r_pwm  2//Motor B2
+#define rmotorf 30 //Motor A1
+#define rmotorb 32 //Motor A2
+#define lmotorf 26 //Motor B1
+#define lmotorb 28 //Motor B2 ` 
+#define r_pwm 3//Motor B1
+#define l_pwm  2//Motor B2
 
 #define trigPin1 20// utrasonic
 #define echoPin1 21 // ultra sonic
@@ -119,10 +119,12 @@ delay(1000);
 
 void loop() 
 {
-  read_sensor();
-}
+//  read_sensor();
+
 //distance1();
-//tracking2();
+tracking2();
+//forward();
+}
 //read_sensor();
  //
 //tracking_reverse();
