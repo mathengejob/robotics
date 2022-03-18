@@ -1,7 +1,7 @@
 
 void tracking2() 
 {
-  digitalWrite(26,HIGH);
+  //digitalWrite(26,HIGH);
  analogWrite(l_pwm, l_max_speedf);
 analogWrite(r_pwm, r_max_speedf);
 int sensor1=digitalRead(34);//sensor1
@@ -25,7 +25,7 @@ digitalWrite(rmotorb,LOW);
 
 else if((sensor1==0)&&(sensor2==1)&&(sensor3==1)&&(sensor4==0)&&(sensor5==0))// slight to right>> move foward)
 { 
- analogWrite(l_pwm, l_max_speedf+0);
+ analogWrite(l_pwm, l_max_speedf-20);
 analogWrite(r_pwm, r_max_speedf+0);
 digitalWrite(lmotorf,HIGH);
 digitalWrite(rmotorf,HIGH);
@@ -35,7 +35,7 @@ digitalWrite(rmotorb,LOW);
 else if((sensor1==0)&&(sensor2==0)&&(sensor3==1)&&(sensor4==1)&&(sensor5==0))// slight to the left >>move forward
 { 
  analogWrite(l_pwm, l_max_speedf+0);
-analogWrite(r_pwm, r_max_speedf+0);
+analogWrite(r_pwm, r_max_speedf-20);
 digitalWrite(lmotorf,HIGH);
 digitalWrite(rmotorf,HIGH);
 digitalWrite(lmotorb,LOW);
