@@ -4,11 +4,11 @@ void tracking2()
   digitalWrite(26,HIGH);
  analogWrite(l_pwm, l_max_speedf);
 analogWrite(r_pwm, r_max_speedf);
-int sensor1=digitalRead(43);//sensor1
-int sensor2=digitalRead(42);//sensor2
-int sensor3=digitalRead(37);//sensor3
-int sensor4=digitalRead(41);//sensor4
-int sensor5=digitalRead(39);//sensor5
+int sensor1=digitalRead(34);//sensor1
+int sensor2=digitalRead(36);//sensor2
+int sensor3=digitalRead(38);//sensor3
+int sensor4=digitalRead(40);//sensor4
+int sensor5=digitalRead(42);//sensor5
 int pre_l_value;
 int pre_r_value;
 int cur_l_value=sensor1;
@@ -147,11 +147,11 @@ void tracking_reverse()
   digitalWrite(26,HIGH);
  analogWrite(l_pwm, l_max_speedf);
 analogWrite(r_pwm, r_max_speedf);
-int sensor1=digitalRead(43);//sensor1
-int sensor2=digitalRead(42);//sensor2
-int sensor3=digitalRead(37);//sensor3
-int sensor4=digitalRead(41);//sensor4
-int sensor5=digitalRead(39);//sensor5
+int sensor1=digitalRead(34);//sensor1
+int sensor2=digitalRead(36);//sensor2
+int sensor3=digitalRead(38);//sensor3
+int sensor4=digitalRead(40);//sensor4
+int sensor5=digitalRead(42);//sensor5
 int pre_l_value;
 int pre_r_value;
 int cur_l_value=sensor1;
