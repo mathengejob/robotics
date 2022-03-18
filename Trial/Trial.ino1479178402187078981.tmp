@@ -108,8 +108,6 @@ void setup()
   Delay(1000);
   servo4.write(90,12);
   Delay(1000);*/
-  //forward();
-  //delay(6000);
 
 
 }
@@ -121,8 +119,8 @@ void loop()
   { // put the code for each task here and remember to indicate the next state
      case TESTCODE:
            //tracksensors_testing(); 
-           forward(); 
-           //Track_line();
+           //forward(); 
+           Track_line();
            //lineTrack_PID(90, 92); 
            //count = Counter();
            //Serial.print(count);  
@@ -137,7 +135,7 @@ void loop()
           button = digitalRead(Interrupt);
           //Serial.println(button);                  
           if (button == HIGH)
-            {state = TESTCODE;}
+            {state = TASK8;}
           else
           state = STAND_BY;
      break;

@@ -108,8 +108,6 @@ void setup()
   Delay(1000);
   servo4.write(90,12);
   Delay(1000);*/
-  //forward();
-  //delay(6000);
 
 
 }
@@ -121,8 +119,8 @@ void loop()
   { // put the code for each task here and remember to indicate the next state
      case TESTCODE:
            //tracksensors_testing(); 
-           forward(); 
-           //Track_line();
+           //forward(); 
+           Track_line();
            //lineTrack_PID(90, 92); 
            //count = Counter();
            //Serial.print(count);  
@@ -137,7 +135,7 @@ void loop()
           button = digitalRead(Interrupt);
           //Serial.println(button);                  
           if (button == HIGH)
-            {state = TESTCODE;}
+            {state = TASK4;}
           else
           state = STAND_BY;
      break;
@@ -229,28 +227,35 @@ void loop()
         reverse();
         Delay(200);
         Stop();
-        //int a = 3;
-        //if(a == 3)
-        state = TASK8;
+        Delay(1000);
+        state = TASK7;
    break;
 /*........................................................................................................................................*/
  case TASK7:
-      lineTrack_PID(60,60);
-      Delay(1000);
-      int b = 3;
-      if( b== 3)
+      U6 = digitalRead(sensor6);
+      line_trackPID(60,60);
+      if(U6 == LOW)
       {
         Stop();
         Delay(1000);
         state = TASK8;
       }
- break;
+      
 /*........................................................................................................................................*/
   case TASK8:
-     forward();
-     
-
-  break;
+     U2 = digitalRead(sensor2); 
+     analogWrite(PWM_Right,0 );
+     analogWrite(PWM_Left,90);
+     digitalWrite(rightIN1,HIGH);
+     digitalWrite(rightIN2, LOW);
+     digitalWrite(leftIN3, HIGH);
+     digitalWrite(leftIN4, LOW);
+     if(U2== HIGH)
+      {
+        Stop();
+        Delay(1000);
+        state = TASK9;
+      }
 /*........................................................................................................................................*/
    case TASK9:
      U4 = digitalRead(sensor4); 
