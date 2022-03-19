@@ -137,7 +137,7 @@ void loop()
           button = digitalRead(Interrupt);
           //Serial.println(button);                  
           if (button == HIGH)
-            {state = TESTCODE;}
+            {state = TASK6;}
           else
           state = STAND_BY;
      break;
@@ -227,44 +227,39 @@ void loop()
    case TASK6:
         Stop();
         reverse();
-        Delay(200);
+        delay(200);
         Stop();
         //int a = 3;
         //if(a == 3)
-        state = TASK8;
+        state = TASK7;
    break;
 /*........................................................................................................................................*/
  case TASK7:
-      lineTrack_PID(60,60);
-      Delay(1000);
-      int b = 3;
-      if( b== 3)
-      {
-        Stop();
-        Delay(1000);
-        state = TASK8;
-      }
+      forward();
+      delay(1000);
+      state = TASK8;
+      
  break;
 /*........................................................................................................................................*/
   case TASK8:
      forward();
-     
-
+     delay(2000);
+     state= TASK9;
   break;
 /*........................................................................................................................................*/
    case TASK9:
-     U4 = digitalRead(sensor4); 
+     //U4 = digitalRead(sensor4); 
      analogWrite(PWM_Right,0 );
      analogWrite(PWM_Left,90);
      digitalWrite(rightIN1,HIGH);
      digitalWrite(rightIN2, LOW);
      digitalWrite(leftIN3, HIGH);
      digitalWrite(leftIN4, LOW);
-     if(U4==HIGH)
+     //if(U4==HIGH)
       {
-        Stop();
-        Delay(1000);
-        state = START;
+       // Stop();
+        //Delay(1000);
+        //state = START;
       }
     break;
 /*.........................................................................................................................................*/
